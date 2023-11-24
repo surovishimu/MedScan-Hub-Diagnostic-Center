@@ -19,6 +19,8 @@ import Addtest from "../Pages/AdminDashboard/Addtest";
 import Reservation from "../Pages/AdminDashboard/Reservation";
 import Addbanner from "../Pages/AdminDashboard/Addbanner";
 import AllBanner from "../Pages/AdminDashboard/AllBanner";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import SignUp from "../Login/SignUp";
 
 
 
@@ -27,6 +29,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -53,6 +56,10 @@ export const router = createBrowserRouter([
                 path: 'login',
                 element: <Login></Login>
             },
+            {
+                path: 'signup',
+                element:<SignUp></SignUp>
+            }
 
         ]
     },
@@ -61,20 +68,20 @@ export const router = createBrowserRouter([
         element: <UserDashbord></UserDashbord>,
         children: [
             {
-                path:'userprofile',
-                element:<UserProfile></UserProfile>,
+                path: 'userprofile',
+                element: <UserProfile></UserProfile>,
             },
             {
-                path:'appointments',
-                element:<Appoinments></Appoinments>,
+                path: 'appointments',
+                element: <Appoinments></Appoinments>,
             },
             {
-                path:'testresult',
-                element:<TestResult></TestResult>
+                path: 'testresult',
+                element: <TestResult></TestResult>
             },
             {
-                path:'review',
-                element:<Review></Review>
+                path: 'review',
+                element: <Review></Review>
             },
 
         ]
@@ -84,29 +91,29 @@ export const router = createBrowserRouter([
         element: <AdminDashboard></AdminDashboard>,
         children: [
             {
-                path:'allusers',
-                element:<Alluser></Alluser>
+                path: 'allusers',
+                element: <Alluser></Alluser>
 
             },
             {
-                path:'addtest',
-                element:<Addtest></Addtest>
+                path: 'addtest',
+                element: <Addtest></Addtest>
             },
             {
-                path:'alltest',
-                element:<Alltest></Alltest>
+                path: 'alltest',
+                element: <Alltest></Alltest>
             },
             {
-                path:'reservation',
-                element:<Reservation></Reservation>
+                path: 'reservation',
+                element: <Reservation></Reservation>
             },
             {
-                path:'addbanner',
-                element:<Addbanner></Addbanner>
+                path: 'addbanner',
+                element: <Addbanner></Addbanner>
             },
             {
-                path:'allbanners',
-                element:<AllBanner></AllBanner>
+                path: 'allbanners',
+                element: <AllBanner></AllBanner>
             },
         ]
     },

@@ -25,7 +25,7 @@ const Footer = () => {
                             <img className='w-20' src={logo} alt="" />
                         </div>
                         <div>
-                            <p><span className="text-lg font-semibold">MedScan Hub</span> <br />Precision Diagnostics, Compassionate Care – Your Trusted Partner in Health </p>
+                            <p><span className="text-lg text-orange-400 font-semibold">MedScan <span className='text-green-400'>Hub</span></span> <br />Your Trusted Partner in Health </p>
                         </div>
                     </div>
                 </nav>

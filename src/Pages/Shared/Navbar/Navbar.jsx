@@ -105,8 +105,8 @@ const Navbar = () => {
         <nav className="bg-green-900 px-6">
             <div className="container mx-auto flex justify-between items-center">
 
-                <div className='flex flex-col items-center -space-y-3'>
-                    <img className='w-20 h-16' src={logo} alt="" /><a href="/" className="text-white text-sm font-bold">MedScan Hub</a>
+            <div className='flex flex-col items-center -space-y-3'>
+                    <img className='w-20 h-16' src={logo} alt="" /><a href="/" className="text-orange-300 text-lg font-bold">MedScan <span className='text-green-300'>Hub</span></a>
                 </div>
 
                 {/* large device */}
