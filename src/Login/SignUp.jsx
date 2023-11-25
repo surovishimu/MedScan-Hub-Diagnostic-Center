@@ -1,10 +1,17 @@
-import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import loginImage from '../../public/image/loginpage-removebg-preview.png';
 import logo from '../../public/image/logo.png'
 import Social from './Social';
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 const SignUp = () => {
+    const axiosPublic = useAxiosPublic();
+    const { createUser, handleUpdateprofile } = useContext(AuthContext);
+    const navigate = useNavigate()
+
     const [formData, setFormData] = useState({
         email: '',
         name: '',
@@ -43,7 +50,6 @@ const SignUp = () => {
 
         });
 
-
         const filteredUpazilas = allUpazilas.filter(upazila => upazila.district_id === selectedDistrictId);
         setUpazilas(filteredUpazilas);
     };
@@ -57,6 +63,71 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const name = form.name.value;
+        const img = form.avatar.value;
+        const blood = form.bloodGroup.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+        const selectedDistrictId = form.district.value;
+        const selectedUpazilaId = form.upazila.value;
+
+
+        const district = districts.find(d => d.id === selectedDistrictId);
+        const upazila = upazilas.find(u => u.id === selectedUpazilaId);
+
+        const districtName = district ? district.name : '';
+        const upazilaName = upazila ? upazila.name : '';
+
+        console.log(email, name, img, blood, districtName, upazilaName, password, confirmPassword);
+
+
+
+        if (password.length < 6) {
+            toast.error('password must be at least 6 carecters');
+            return;
+        }
+        else if (password !== confirmPassword) {
+            toast.error('Passwords do not match.');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            toast.error('Your password should have at least one upper case characters');
+            return;
+        }
+        else if (!/[^a-zA-Z0-9]/.test(password)) {
+            toast.error('Your password should have at least one special character');
+            return;
+        }
+        createUser(email, password)
+            .then(() => {
+                const userInfo = {
+                    email,
+                    name,
+                    img,
+                    blood,
+                    districtName,
+                    upazilaName,
+                    status: 'Active'
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            handleUpdateprofile(name, img)
+                                .then(() => {
+                                    toast.success('user created succesfully');
+                                    navigate('/')
+                                })
+                        }
+                    })
+
+
+            }
+
+            )
+            .catch(error => toast.error(error.message))
+
 
     };
 
@@ -74,7 +145,6 @@ const SignUp = () => {
                     <img className='w-full md:mb-80 mb-0 ' src={loginImage} alt="" />
                 </div>
 
-
                 <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-4 flex-1">
 
                     <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
@@ -90,6 +160,7 @@ const SignUp = () => {
                                     placeholder="Email"
                                     name="email"
                                     value={formData.email}
+                                    onChange={handleChange}
 
                                 />
                             </div>
@@ -102,7 +173,8 @@ const SignUp = () => {
                                     type="text"
                                     placeholder="Name"
                                     name="name"
-                                    value={formData.email}
+                                    value={formData.name}
+                                    onChange={handleChange}
 
                                 />
                             </div>
@@ -222,3 +294,5 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+
