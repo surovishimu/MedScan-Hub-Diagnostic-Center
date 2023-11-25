@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import loginImage from '../../public/image/loginpage-removebg-preview.png';
-import logo from '../../public/image/logo.png'
+import logo from '../../public/image/logo.png';
 import Social from './Social';
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
@@ -9,13 +9,13 @@ import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 const SignUp = () => {
     const axiosPublic = useAxiosPublic();
-    const { createUser, handleUpdateprofile } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const { createUser, handleUpdateprofile, loading } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         email: '',
         name: '',
-        avatar: '',
+        avatar: null,
         bloodGroup: '',
         district: '',
         upazila: '',
@@ -28,7 +28,6 @@ const SignUp = () => {
     const [allUpazilas, setAllUpazilas] = useState([]);
 
     useEffect(() => {
-
         fetch('districts.json')
             .then(res => res.json())
             .then(data => setDistricts(data))
@@ -47,7 +46,6 @@ const SignUp = () => {
         setFormData({
             ...formData,
             district: selectedDistrictId,
-
         });
 
         const filteredUpazilas = allUpazilas.filter(upazila => upazila.district_id === selectedDistrictId);
@@ -61,18 +59,17 @@ const SignUp = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
         const form = e.target;
         const email = form.email.value;
         const name = form.name.value;
-        const img = form.avatar.value;
         const blood = form.bloodGroup.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
         const selectedDistrictId = form.district.value;
         const selectedUpazilaId = form.upazila.value;
-
 
         const district = districts.find(d => d.id === selectedDistrictId);
         const upazila = upazilas.find(u => u.id === selectedUpazilaId);
@@ -80,61 +77,63 @@ const SignUp = () => {
         const districtName = district ? district.name : '';
         const upazilaName = upazila ? upazila.name : '';
 
-        console.log(email, name, img, blood, districtName, upazilaName, password, confirmPassword);
-
-
-
         if (password.length < 6) {
-            toast.error('password must be at least 6 carecters');
+            toast.error('Password must be at least 6 characters');
             return;
-        }
-        else if (password !== confirmPassword) {
+        } else if (password !== confirmPassword) {
             toast.error('Passwords do not match.');
             return;
-        }
-        else if (!/[A-Z]/.test(password)) {
-            toast.error('Your password should have at least one upper case characters');
+        } else if (!/[A-Z]/.test(password)) {
+            toast.error('Your password should have at least one uppercase character');
             return;
-        }
-        else if (!/[^a-zA-Z0-9]/.test(password)) {
+        } else if (!/[^a-zA-Z0-9]/.test(password)) {
             toast.error('Your password should have at least one special character');
             return;
         }
-        createUser(email, password)
-            .then(() => {
-                const userInfo = {
-                    email,
-                    name,
-                    img,
-                    blood,
-                    districtName,
-                    upazilaName,
-                    status: 'Active'
-                }
-                axiosPublic.post('/users', userInfo)
-                    .then(res => {
-                        if (res.data.insertedId) {
-                            handleUpdateprofile(name, img)
-                                .then(() => {
-                                    toast.success('user created succesfully');
-                                    navigate('/')
-                                })
-                        }
-                    })
 
 
-            }
+        const imgbbApiKey = import.meta.env.VITE_IMAGE_HOSTING_Key;
+        const formDataImgbb = new FormData();
+        formDataImgbb.append('image', formData.avatar);
 
-            )
-            .catch(error => toast.error(error.message))
+        try {
+            const imgbbResponse = await axiosPublic.post(`https://api.imgbb.com/1/upload?key=${imgbbApiKey}`, formDataImgbb);
+            console.log(imgbbResponse);
+            const imgUrl = imgbbResponse.data.data.url;
 
+            createUser(email, password)
+                .then(() => {
+                    const userInfo = {
+                        email,
+                        name,
+                        img: imgUrl,
+                        blood,
+                        districtName,
+                        upazilaName,
+                        status: 'Active'
+                    };
 
+                    axiosPublic.post('/users', userInfo)
+                        .then(res => {
+                            if (res.data.insertedId) {
+                                handleUpdateprofile(name, imgUrl)
+                                    .then(() => {
+
+                                        toast.success('User created successfully');
+                                        navigate('/');
+                                    });
+                            }
+                        });
+                })
+                .catch(error => toast.error(error.message));
+        } catch (error) {
+            toast.error('Error uploading image to imgbb');
+        }
     };
 
     return (
         <div className='bg-green-100'>
-
-            <div className="flex md:flex-row flex-col min-h-screen  items-center justify-around">
+            {loading ? <span className="loading loading-infinity loading-lg"></span> : <div className="flex md:flex-row flex-col min-h-screen  items-center justify-around">
                 <div className="md:w-1/2 w-full flex-1  ">
                     <div className='flex  flex-col items-center justify-center pt-5'>
                         <div className='flex flex-col -space-y-3'>
@@ -183,12 +182,18 @@ const SignUp = () => {
                                     Image URL
                                 </label>
                                 <input
-                                    type="text"
+                                    type="file"
                                     className="border border-gray-300 px-3 py-2 rounded-md w-full"
                                     placeholder="Image URL"
                                     name="avatar"
-                                    value={formData.avatar}
-                                    onChange={handleChange}
+                                    accept="image/*"
+                                    onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setFormData({
+                                            ...formData,
+                                            avatar: file,
+                                        });
+                                    }}
                                 />
                             </div>
                             <div className="mb-4">
@@ -288,11 +293,11 @@ const SignUp = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>}
+
         </div>
     );
 };
 
 export default SignUp;
-
 

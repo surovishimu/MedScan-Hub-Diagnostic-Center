@@ -32,9 +32,9 @@ const AuthProvider = ({ children }) => {
     }
 
     // update profile
-    const handleUpdateprofile = (name, photo) => {
+    const handleUpdateprofile = (name, img) => {
         return updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photo
+            displayName: name, photoURL: img
         })
     }
     // google login

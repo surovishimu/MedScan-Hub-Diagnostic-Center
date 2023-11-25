@@ -6,6 +6,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { MdOutlineAddBox } from "react-icons/md";
 import { TbHandClick } from "react-icons/tb";
 import { PiFlagBanner } from "react-icons/pi";
+import { Toaster } from "react-hot-toast";
 const AdminDashbord = () => {
 
     return (
@@ -124,6 +125,7 @@ const AdminDashbord = () => {
             <div className="flex-1 p-8">
                 <Outlet></Outlet>
             </div>
+            <Toaster position="bottom-center"></Toaster>
         </div>
     );
 };

@@ -16,13 +16,14 @@ const Social = () => {
             .then(result => {
                 const userInfo = {
                     email: result.user?.email,
-                    name: result.user?.displayname,
+                    name: result.user?.displayName,
                     img: result.user?.photoURL,
                     status: 'Active'
                 }
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
                         console.log(res.data);
+                        toast.success('You Loggedin Successfully')
                         navigate('/');
                     })
 
