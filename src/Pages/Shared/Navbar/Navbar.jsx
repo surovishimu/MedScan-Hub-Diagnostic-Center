@@ -8,7 +8,7 @@ import useAuth from '../../../Hooks/useAuth';
 const Navbar = () => {
     const { user, logOut } = useAuth();
     const [isDrawerOpen, setDrawerOpen] = useState(false);
-
+    
     const toggleDrawer = () => {
         setDrawerOpen(!isDrawerOpen);
     };
@@ -63,6 +63,20 @@ const Navbar = () => {
             Gallery
         </NavLink>
 
+
+
+        < NavLink
+            to="admindashboard/allusers"
+            className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
+                return isPending
+                    ? 'pending text-white p-3 lg:p-7 text-sm uppercase font-semibold'
+                    : isActive || isExact || isPartiallyCurrent
+                        ? 'active text-black bg-green-700 lg:p-7 p-3 text-sm uppercase font-semibold'
+                        : 'text-white hover:text-black hover:bg-white p-3 lg:p-7 text-sm uppercase font-semibold';
+            }}
+        >
+            Admin Dashboard
+        </NavLink> :
         <NavLink
             to="userdashboard/userprofile"
             className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
@@ -76,18 +90,7 @@ const Navbar = () => {
             Dashboard
         </NavLink>
 
-        <NavLink
-            to="admindashboard/allusers"
-            className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
-                return isPending
-                    ? 'pending text-white p-3 lg:p-7 text-sm uppercase font-semibold'
-                    : isActive || isExact || isPartiallyCurrent
-                        ? 'active text-black bg-green-700 lg:p-7 p-3 text-sm uppercase font-semibold'
-                        : 'text-white hover:text-black hover:bg-white p-3 lg:p-7 text-sm uppercase font-semibold';
-            }}
-        >
-            Admin Dashboard
-        </NavLink>
+
         {
             user?.email ?
                 <div className="dropdown dropdown-end">
@@ -126,7 +129,7 @@ const Navbar = () => {
         }
 
 
-    </div>
+    </div >
 
 
     return (
