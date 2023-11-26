@@ -21,6 +21,7 @@ import Addbanner from "../Pages/AdminDashboard/Addbanner";
 import AllBanner from "../Pages/AdminDashboard/AllBanner";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import SignUp from "../Login/SignUp";
+import PackageDetails from "../Pages/Home/PopularPackage/PackageDetails";
 
 
 
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
             {
                 path: 'signup',
                 element:<SignUp></SignUp>
+            },
+            {
+                path:'/package/:id',
+                element:<PackageDetails></PackageDetails>
             }
 
         ]
