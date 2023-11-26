@@ -16,10 +16,17 @@ const Addbanner = () => {
     });
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
+        if (e.target.name === 'image') {
+            setFormData({
+                ...formData,
+                image: e.target.files[0],
+            });
+        } else {
+            setFormData({
+                ...formData,
+                [e.target.name]: e.target.value,
+            });
+        }
     };
 
     const handleImageUpload = async () => {
@@ -57,7 +64,7 @@ const Addbanner = () => {
                 description,
                 couponCodeName,
                 discountRate,
-                isActive: true,
+                isActive: false,
             };
 
             await axiosSecure.post('/banners', bannerInfo);
@@ -77,7 +84,7 @@ const Addbanner = () => {
             console.error('Error creating banner:', error);
             toast.error('Failed to create the banner. Please try again.');
         }
-        
+
 
     };
 
@@ -173,7 +180,7 @@ const Addbanner = () => {
                 <div className="mb-6 col-span-2">
                     <button
                         type="submit"
-                        className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
+                        className="w-full p-2 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none"
                     >
                         Save Banner
                     </button>
