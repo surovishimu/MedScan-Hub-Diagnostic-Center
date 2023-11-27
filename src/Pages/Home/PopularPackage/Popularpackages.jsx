@@ -12,10 +12,10 @@ const Popularpackages = () => {
 
     return (
         <div className="mt-16 ">
-            <h1 className="text-3xl border-b-2 border-slate-500 pb-2 mb-10">
-                Popular <span className="font-semibold text-4xl">Packages</span>
+            <h1 className="text-3xl border-r-4 border-green-700 pr-2  mb-10 inline-block">
+                Our Popular <span className="font-semibold text-4xl text-amber-500">Packages</span>
             </h1>
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10 mt-10">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10 ">
                 {
                     packages.map((apackage) => (
                         <div key={apackage._id} className="card  bg-base-100 shadow-xl rounded-sm">

@@ -28,12 +28,12 @@ const SignUp = () => {
     const [allUpazilas, setAllUpazilas] = useState([]);
 
     useEffect(() => {
-        fetch('districts.json')
+        fetch('http://localhost:5000/alldistrict')
             .then(res => res.json())
             .then(data => setDistricts(data))
             .catch(error => console.error('Error fetching districts:', error));
 
-        fetch('upazilas.json')
+        fetch('http://localhost:5000/allupazila')
             .then(res => res.json())
             .then(data => {
                 setUpazilas(data);

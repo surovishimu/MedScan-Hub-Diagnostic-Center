@@ -3,8 +3,8 @@
 const Promotions = () => {
     return (
         <div className="mt-16">
-            <h1 className="text-3xl border-b-2 border-slate-500 pb-2 mb-10">
-                Current <span className="font-semibold text-4xl">Promotions </span>
+            <h1 className="text-3xl text-right border-r-4 border-green-700 pr-2  mb-10  inline-block">
+                Current <span className="font-semibold text-4xl text-amber-500">Promotions </span>
             </h1>
 
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 ">
