@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     const [activeBanner, setActiveBanner] = useState(null);
@@ -25,9 +26,10 @@ const Banner = () => {
                         <p data-aos="fade-right"
                             data-aos-duration="3000" className="text-xl mt-2">{activeBanner.description}</p>
                         <div data-aos="zoom-in-up" data-aos-duration="3000">
+                            <Link to={'/alltest'}>
                             <button className="bg-green-600 btn text-slate-200 py-2 px-4 rounded mt-4 font-semibold w-44 text-lg outline-none border-none hover:bg-green-600">
                                 All Test <BiRightArrowAlt className="inline text-xl" />
-                            </button>
+                            </button></Link>
                         </div>
                     </div>
 

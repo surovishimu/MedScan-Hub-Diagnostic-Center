@@ -23,6 +23,9 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import SignUp from "../Login/SignUp";
 import PackageDetails from "../Pages/Home/PopularPackage/PackageDetails";
 import TestDetails from "../Pages/All Test/TestDetails";
+import Payment from "../Pages/All Test/Payment";
+import PrivateRoute from "./PrivateRoute";
+
 
 
 
@@ -60,22 +63,23 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'signup',
-                element:<SignUp></SignUp>
+                element: <SignUp></SignUp>
             },
             {
-                path:'/package/:id',
-                element:<PackageDetails></PackageDetails>
+                path: '/package/:id',
+                element: <PackageDetails></PackageDetails>
             },
             {
-                path:'/alltests/:id',
-                element:<TestDetails></TestDetails>
+                path: '/alltests/:id',
+                element: <TestDetails></TestDetails>
             }
+
 
         ]
     },
     {
         path: 'userdashboard',
-        element: <UserDashbord></UserDashbord>,
+        element: <PrivateRoute><UserDashbord></UserDashbord></PrivateRoute>,
         children: [
             {
                 path: 'userprofile',
@@ -93,6 +97,11 @@ export const router = createBrowserRouter([
                 path: 'review',
                 element: <Review></Review>
             },
+            {
+                path: 'payment/:id',
+                element: <Payment></Payment>
+            }
+
 
         ]
     },

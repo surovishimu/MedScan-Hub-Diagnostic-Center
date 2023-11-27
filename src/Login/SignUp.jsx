@@ -122,7 +122,7 @@ const SignUp = () => {
                                     .then(() => {
 
                                         toast.success('User created successfully');
-                                        navigate('/');
+                                        navigate('/userdashboard/userprofile');
                                     });
                             }
                         });

@@ -11,7 +11,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
-
+    const from = location.state?.from?.pathname || "/userdashboard/userprofile";
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -28,7 +28,7 @@ const Login = () => {
                         duration: 6000,
                     }
                 );
-                navigate(location?.state ? location?.state : '/')
+                navigate(from, { replace: true });
 
             })
             .catch(error => toast.error(error.message))
@@ -58,7 +58,7 @@ const Login = () => {
                                 <input type="email" placeholder="Email" name='email' className="w-full p-2 border rounded focus:outline-none focus:border-green-700" />
                             </div>
                             <div className="mb-4">
-                                <input type="password" placeholder="Password"  name='password' className="w-full p-2 border rounded focus:outline-none focus:border-green-700" />
+                                <input type="password" placeholder="Password" name='password' className="w-full p-2 border rounded focus:outline-none focus:border-green-700" />
                             </div>
                             <div className="mb-6">
                                 <button type="submit" className="w-full p-2 bg-green-700 text-white rounded hover:bg-green-600 focus:outline-none">Login</button>
