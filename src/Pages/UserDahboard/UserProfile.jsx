@@ -11,8 +11,8 @@ const UserProfile = () => {
     const [districts, setDistricts] = useState([]);
     const [upazilas, setUpazilas] = useState([]);
     const [allUpazilas, setAllUpazilas] = useState([]);
-    const [selectedFile, setSelectedFile] = useState(null); // Added state for the selected file
-    const [imageUrl, setImageUrl] = useState(null); // Added state for the uploaded image URL
+    const [selectedFile, setSelectedFile] = useState(null);
+    const [imageUrl, setImageUrl] = useState(null);
 
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
@@ -62,11 +62,10 @@ const UserProfile = () => {
     };
 
     const handleSaveChanges = () => {
-        // Upload image if a file is selected
         if (selectedFile) {
             uploadImage(selectedFile);
         } else {
-            // If no image is selected, update the user data
+
             updateUserData();
         }
     };
@@ -95,12 +94,12 @@ const UserProfile = () => {
     };
 
     const handleFileChange = (e) => {
-        // Set the selected file when the input file changes
+
         setSelectedFile(e.target.files[0]);
     };
     const imgbbApiKey = import.meta.env.VITE_IMAGE_HOSTING_Key;
     const uploadImage = async (file) => {
-        // Upload the image to imgbb
+
         const formData = new FormData();
         formData.append('image', file);
 
@@ -112,9 +111,9 @@ const UserProfile = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                // Set the uploaded image URL
+
                 setImageUrl(data.data.url);
-                // Update user data with the uploaded image URL
+
                 updateUserDataWithImage(data.data.url);
             } else {
                 toast.error('Image upload failed');

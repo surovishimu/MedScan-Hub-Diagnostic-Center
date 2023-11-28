@@ -29,7 +29,7 @@ const Alltest = () => {
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">{test.title}</h2>
-                                <p>{test.description}</p>
+                                <p>{test.description.slice(0, 50)}..</p>
                                 <div className="card-actions">
                                     <Link to={`/alltests/${test._id}`}>
                                         <button className="btn bg-green-700 hover:bg-green-700 text-white rounded-none uppercase">See Details</button></Link>
