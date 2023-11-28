@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link } from "react-router-dom";
 
@@ -7,8 +7,12 @@ const Alltest = () => {
     const axiosPublic = useAxiosPublic();
     const [tests, setTests] = useState([])
     console.log(tests);
-    axiosPublic.get('/alltests')
-        .then(res => setTests(res.data))
+    useEffect(() => {
+        
+        axiosPublic.get('/alltests')
+            .then(res => setTests(res.data))
+            .catch(error => console.error("Error fetching data:", error));
+    }, [axiosPublic]);
 
 
 

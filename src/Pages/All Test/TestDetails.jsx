@@ -105,7 +105,7 @@ const TestDetails = () => {
                     <>
                         <h1 className="text-3xl font-bold mb-5">{testDetails.title}</h1>
                         <p>{testDetails.description}</p>
-                        <p className="text-2xl">Price: {testDetails.price} ৳</p>
+                        <p className="text-2xl">Price: {testDetails.price} </p>
                         <div>
                             <h2 className="text-2xl font-bold mb-3">Select a Date:</h2>
                             <input

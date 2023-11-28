@@ -16,7 +16,7 @@ import TestResult from "../Pages/UserDahboard/TestResult";
 import Review from "../Pages/UserDahboard/Review";
 import Alluser from "../Pages/AdminDashboard/Alluser";
 import Addtest from "../Pages/AdminDashboard/Addtest";
-import Reservation from "../Pages/AdminDashboard/Reservation";
+
 import Addbanner from "../Pages/AdminDashboard/Addbanner";
 import AllBanner from "../Pages/AdminDashboard/AllBanner";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
@@ -25,6 +25,9 @@ import PackageDetails from "../Pages/Home/PopularPackage/PackageDetails";
 import TestDetails from "../Pages/All Test/TestDetails";
 import Payment from "../Pages/All Test/Payment";
 import PrivateRoute from "./PrivateRoute";
+import AlltestList from "../Pages/AdminDashboard/AlltestList";
+import UpdateTest from "../Pages/AdminDashboard/UpdateTest";
+import Reservations from "../Pages/AdminDashboard/Reservations";
 
 
 
@@ -118,14 +121,20 @@ export const router = createBrowserRouter([
                 path: 'addtest',
                 element: <Addtest></Addtest>
             },
+
             {
-                path: 'alltest',
-                element: <Alltest></Alltest>
+                path: 'testlist',
+                element: <AlltestList></AlltestList>
             },
             {
-                path: 'reservation',
-                element: <Reservation></Reservation>
+                path: 'testlist/:id',
+                element: <UpdateTest></UpdateTest>
             },
+            {
+                path: 'reservation/:id',
+                element: <Reservations></Reservations>
+            },
+
             {
                 path: 'addbanner',
                 element: <Addbanner></Addbanner>

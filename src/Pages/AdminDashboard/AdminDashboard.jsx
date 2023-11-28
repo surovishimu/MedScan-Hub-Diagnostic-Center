@@ -1,5 +1,5 @@
 
-import { FaCalendarCheck, FaHome, FaListAlt, FaUsers } from "react-icons/fa";
+import { FaHome, FaListAlt, FaUsers } from "react-icons/fa";
 
 import { MdDensitySmall } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
@@ -42,7 +42,7 @@ const AdminDashbord = () => {
 
 
                 <NavLink
-                    to="/admindashboard/alltest"
+                    to="/admindashboard/testlist"
                     className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
                         return isPending
                             ? 'pending flex items-center text-white p-3 lg:p-7 text-sm uppercase font-semibold'
@@ -54,18 +54,7 @@ const AdminDashbord = () => {
                     <MdDensitySmall className="mr-2 text-xl" /> All tests
                 </NavLink>
 
-                <NavLink
-                    to="/admindashboard/reservation"
-                    className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
-                        return isPending
-                            ? 'pending flex items-center text-white p-3 lg:p-7 text-sm uppercase font-semibold'
-                            : isActive || isExact || isPartiallyCurrent
-                                ? 'active flex items-center text-black bg-green-700 lg:p-7 p-3 text-sm uppercase font-semibold'
-                                : 'flex items-center text-white hover:text-black hover:bg-white p-3 lg:p-7 text-sm uppercase font-semibold';
-                    }}
-                >
-                    <FaCalendarCheck className="mr-2 text-xl" /> Reservation
-                </NavLink>
+                
                 <NavLink
                     to="/admindashboard/addbanner"
                     className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {

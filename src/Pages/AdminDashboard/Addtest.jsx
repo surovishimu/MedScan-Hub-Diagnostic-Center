@@ -76,6 +76,9 @@ const Addtest = () => {
   };
   return (
     <div className=" px-20  ">
+       <h1 className="text-3xl text-slate-600 border-r-4 border-green-700 pr-2  mb-10 inline-block">
+                Add <span className="font-semibold text-4xl text-amber-500">a Test </span>
+            </h1>
 
       <div className="px-10 mb-10 p-5 bg-white rounded-lg shadow-2xl">
 
