@@ -1,0 +1,722 @@
+[
+    {
+        "title": "Complete Blood Count (CBC)",
+        "image": "https://sunrisediagnosis.com/wp-content/uploads/2022/01/CBC-test-1.jpg",
+        "description": "A blood test to measure different components of your blood.",
+        "price": 50,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Cholesterol Panel",
+        "image": "https://cura4u.com/Common/DisplayFileFormFileName?fileName=Lipid_Profile_Blood_Test_Normal_Range_BlogImage_d5675949-f877-432f-9507-c69d1cec7e21.webp",
+        "description": "Measures different types of cholesterol and triglycerides in your blood.",
+        "price": 75,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "PET-CT Scan",
+        "image": "https://i.ytimg.com/vi/NOboyyJc91Q/maxresdefault.jpg",
+        "description": "Combines positron emission tomography and computed tomography for detailed imaging.",
+        "price": 700,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Cardiac Stress Test",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/48/Stress_test.jpg",
+        "description": "Evaluates heart function under stress conditions to detect cardiovascular issues.",
+        "price": 550,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Genetic Testing",
+        "image": "https://newsinhealth.nih.gov/sites/nihNIH/files/styles/featured_media_breakpoint-large/public/2019/May/dna-molecule.jpg?itok=ittRxgZX",
+        "description": "Analyzes DNA to identify genetic mutations and potential health risks.",
+        "price": 600,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Colonoscopy",
+        "image": "https://columbiasurgery.org/sites/default/files/styles/large/public/colorectal_colonoscopy_polyps_full_view.jpg?itok=kfQ8gKCN",
+        "description": "Examines the colon for abnormalities and early signs of colorectal cancer.",
+        "price": 650,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "DEXA Scan",
+        "image": "https://www.hopkinsmedicine.org/-/media/imaging/exam_dexa.jpg",
+        "description": "Measures bone density to assess the risk of osteoporosis and fractures.",
+        "price": 550,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Echocardiogram",
+        "image": "https://www.health.com/thmb/WemXTIphDZ6PSpvb9GUKCnBajlY=/969x0/filters:no_upscale():max_bytes(150000):strip_icc()/Health-Stocksy_txpdb05b8b8hce300_Medium_2873034-a4431fdfbca44769a28eb348398d4c9e.jpg",
+        "description": "Uses sound waves to create images of the heart for detailed analysis.",
+        "price": 600,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Mammogram",
+        "image": "https://www.genesishealth.com/app/files/public/23723/Mammogram.jpg",
+        "description": "X-ray examination of the breast to detect and diagnose breast diseases.",
+        "price": 550,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Pulmonary Function Test",
+        "image": "https://www.mercy.net/content/dam/mercy/en/images/mercy_carthage_plethysmograph.jpg",
+        "description": "Measures lung function to diagnose respiratory conditions.",
+        "price": 600,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Ultrasound Imaging",
+        "image": "https://images.agoramedia.com/wte3.0/gcms/ultrasounds-pregnancy-2021-722x406.jpg",
+        "description": "Uses sound waves to create images of internal body structures for diagnostic purposes.",
+        "price": 550,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Endoscopy",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8zKytOwc9Tzw7LLm8n9F-c2QvVAM1rJhZw&usqp=CAU",
+        "description": "Visual examination of the digestive tract using a flexible tube with a light and camera.",
+        "price": 700,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Cancer Genetic Testing",
+        "image": "https://www.pvhomed.com/wp-content/uploads/2015/06/genetic-testing-image.jpg",
+        "description": "Identifies genetic mutations associated with an increased risk of cancer.",
+        "price": 600,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Virtual Colonoscopy",
+        "image": "https://www.fvhospital.com/wp-content/uploads/2020/11/noi-soi-dai-trang-ao.jpg",
+        "description": "Uses CT scans to create virtual images of the colon for colorectal cancer screening.",
+        "price": 700,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    },
+    {
+        "title": "Bone Marrow Biopsy",
+        "image": "https://www.cancertherapyadvisor.com/wp-content/uploads/sites/12/2022/07/bone_marrow_biopsy_G_151055312.jpg",
+        "description": "Extracts a small amount of bone marrow for examination to diagnose blood disorders.",
+        "price": 550,
+        "availableDates": [
+            {
+                "date": "2023-11-30",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-01",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-02",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-03",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-04",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-05",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-06",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-07",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-08",
+                "slots": 3
+            },
+            {
+                "date": "2023-12-09",
+                "slots": 3
+            }
+        ]
+    }
+]

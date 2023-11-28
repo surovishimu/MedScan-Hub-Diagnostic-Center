@@ -136,10 +136,10 @@ const SignUp = () => {
         const file = e.target.files[0];
 
         if (file) {
-            const maxSizeInBytes = 100 * 1024;
+            const maxSizeInBytes = 200 * 1024;
 
             if (file.size > maxSizeInBytes) {
-                setImageError('Image size must be below 100KB.');
+                setImageError('Image size must be below 200KB.');
                 e.target.value = null;
                 setTimeout(() => {
                     setImageError("");
