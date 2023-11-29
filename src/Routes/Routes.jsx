@@ -28,6 +28,7 @@ import PrivateRoute from "./PrivateRoute";
 import AlltestList from "../Pages/AdminDashboard/AlltestList";
 import UpdateTest from "../Pages/AdminDashboard/UpdateTest";
 import Reservations from "../Pages/AdminDashboard/Reservations";
+import Report from "../Pages/AdminDashboard/Report";
 
 
 
@@ -143,6 +144,10 @@ export const router = createBrowserRouter([
                 path: 'allbanners',
                 element: <AllBanner></AllBanner>
             },
+            {
+                path:'report/:id',
+                element:<Report></Report>
+            }
         ]
     },
 

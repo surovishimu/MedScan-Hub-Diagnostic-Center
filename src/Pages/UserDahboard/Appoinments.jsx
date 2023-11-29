@@ -52,20 +52,22 @@ const Appointments = () => {
                             <tr>
                                 <th>#</th>
                                 <th>Test Name</th>
-                                <th>Details</th>
+                                
                                 <th>Date</th>
                                 <th>Time</th>
+                                <th>Report Status</th>
                                 <th>Cancel Appointments</th>
                             </tr>
                         </thead>
-                        <tbody className="">
+                        <tbody className="text-center">
                             {reservations.map((aReservation, index) => (
                                 <tr key={aReservation._id} className="bg-base-200">
                                     <th>{index + 1}</th>
-                                    <td>{aReservation.name}</td>
-                                    <td>{aReservation.keydetail}</td>
+                                    <td>{aReservation.testName}</td>
+                                    
                                     <td>{aReservation.date}</td>
                                     <td>{aReservation.time}</td>
+                                    <td>{aReservation.report}</td>
                                     <td className="text-center">
                                         <button onClick={() => handleCancellation(aReservation)}>
                                             <MdOutlineCancel className="text-xl text-red-600" />

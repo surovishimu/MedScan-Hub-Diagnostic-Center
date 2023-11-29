@@ -53,8 +53,13 @@ const UserProfile = () => {
             blood: userData.blood || '',
             districtName: userData.districtName || '',
             upazilaName: userData.upazilaName || '',
+            phone: userData.phone || '',
+            age: userData.age || '',
+            weight: userData.weight || '',
         });
     };
+
+
 
     const handleCancelEdit = () => {
         setIsEditable(false);
@@ -211,6 +216,52 @@ const UserProfile = () => {
                         </label>
                     </div>
                     <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                            Phone Number: {isEditable ? (
+                                <input
+                                    type="text"
+                                    className="border border-gray-300 px-3 py-2 rounded-md w-full"
+                                    name="phone"
+                                    value={editedUser.phone}
+                                    onChange={handleChange}
+                                />
+                            ) : (
+                                userData.phone
+                            )}
+                        </label>
+                    </div>
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                            Age: {isEditable ? (
+                                <input
+                                    type="text"
+                                    className="border border-gray-300 px-3 py-2 rounded-md w-full"
+                                    name="age"
+                                    value={editedUser.age}
+                                    onChange={handleChange}
+                                />
+                            ) : (
+                                userData.age
+                            )}
+                        </label>
+                    </div>
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                            Weight: {isEditable ? (
+                                <input
+                                    type="text"
+                                    className="border border-gray-300 px-3 py-2 rounded-md w-full"
+                                    name="weight"
+                                    value={editedUser.weight}
+                                    onChange={handleChange}
+                                />
+                            ) : (
+                                userData.weight
+                            )}
+                        </label>
+                    </div>
+
+                    <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="districtName">
                             District: {isEditable ? (
                                 <select
@@ -255,7 +306,7 @@ const UserProfile = () => {
                     </div>
 
 
-                    {/* Edit Profile Button */}
+                   
                     <div className="mb-6">
                         {!isEditable && (
                             <button
