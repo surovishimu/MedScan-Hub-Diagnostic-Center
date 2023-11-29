@@ -48,16 +48,19 @@ const TestDetails = () => {
             return;
         }
 
-        if (user && user.email) {
+
+        if (user) {
             const reservationInfo = {
                 reserveID: testDetails._id,
                 email: user.email,
-                name: testDetails.title,
+                userName: user.displayName,
+                testName: testDetails.title,
                 image: testDetails.image,
                 keydetail: testDetails.description,
                 time: "8.00 am - 11.00 am",
                 date: selectedDate || "",
-                price: testDetails.price
+                price: testDetails.price,
+                report: 'Pending'
             };
 
             axiosSecure.post('/reservations', reservationInfo)
