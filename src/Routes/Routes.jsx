@@ -30,6 +30,7 @@ import UpdateTest from "../Pages/AdminDashboard/UpdateTest";
 import Reservations from "../Pages/AdminDashboard/Reservations";
 import Report from "../Pages/AdminDashboard/Report";
 import AdminRoute from "./AdminRoute";
+import Career from "../Pages/Career/Career";
 
 
 
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
             {
                 path: 'contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: 'career',
+                element: <Career></Career>
             },
 
             {

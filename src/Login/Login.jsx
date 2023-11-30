@@ -11,7 +11,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || "/userdashboard/userprofile";
+    const from = location.state?.from?.pathname || "/";
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;

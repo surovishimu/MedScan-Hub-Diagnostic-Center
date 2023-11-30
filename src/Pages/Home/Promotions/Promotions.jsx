@@ -7,8 +7,8 @@ const Promotions = () => {
                 Current <span className="font-semibold text-4xl text-amber-500">Promotions </span>
             </h1>
 
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 ">
-                <div className="card w-96 bg-base-100 shadow-xl image-full">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
+                <div className="card  bg-base-100 shadow-xl image-full">
                     <figure><img src="https://www.swaconhospital.com/wp-content/uploads/2019/09/34-5-reasons-why-you-need-a-regular-checkup-feat-1080x600.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title text-2xl">Special Offer: Health Checkup</h2>
@@ -18,7 +18,7 @@ const Promotions = () => {
 
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                <div className="card  bg-base-100 shadow-xl image-full">
                     <figure><img src="https://medlineplus.gov/images/WomensHealthCheckup_Share.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title text-2xl">Free Consultation with Doctors</h2>
@@ -27,7 +27,7 @@ const Promotions = () => {
 
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                <div className="card bg-base-100 shadow-xl image-full">
                     <figure><img src="https://mediversity.com/wp-content/uploads/2022/05/istockphoto-692381776-612x612-1.jpeg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title text-2xl">Family Health Special</h2>

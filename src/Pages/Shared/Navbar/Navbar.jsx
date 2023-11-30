@@ -63,6 +63,18 @@ const Navbar = () => {
         >
             Gallery
         </NavLink>
+        <NavLink
+            to="career"
+            className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
+                return isPending
+                    ? 'pending text-white p-3 lg:p-7 text-sm uppercase font-semibold'
+                    : isActive || isExact || isPartiallyCurrent
+                        ? 'active text-black bg-green-700 lg:p-7 p-3 text-sm uppercase font-semibold'
+                        : 'text-white hover:text-black hover:bg-white p-3 lg:p-7 text-sm uppercase font-semibold';
+            }}
+        >
+           Career
+        </NavLink>
 
 
 
@@ -145,21 +157,20 @@ const Navbar = () => {
                     <img className='w-20 h-16' src={logo} alt="" /><a href="/" className="text-orange-300 text-lg font-bold">MedScan <span className='text-green-300'>Hub</span></a>
                 </div>
 
-                {/* large device */}
+                
                 <div className=''>
                     <ul className="hidden lg:flex space-x-4">
                         {navOptions}
                     </ul>
                 </div>
 
-                {/*Small devices */}
                 <div className="lg:hidden">
                     <button onClick={toggleDrawer} className="text-white focus:outline-none">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
 
-                {/* Drawer for small devices */}
+             
                 {isDrawerOpen && (
                     <div className="lg:hidden absolute top-0 left-0 w-9/12 h-full bg-green-800 bg-opacity-95 z-30">
                         <div className="flex justify-end p-4">

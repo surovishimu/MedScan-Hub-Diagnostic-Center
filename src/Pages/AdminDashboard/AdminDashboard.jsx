@@ -1,5 +1,5 @@
 
-import { FaHome, FaListAlt, FaUsers } from "react-icons/fa";
+import { FaHome,FaUsers } from "react-icons/fa";
 
 import { MdDensitySmall } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
