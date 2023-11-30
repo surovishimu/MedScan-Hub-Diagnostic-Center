@@ -94,7 +94,7 @@ const Reservations = () => {
                                 <th>Total Bill</th>
                                 <th>Report</th>
                                 <th>Cancel Reservation</th>
-                                <th>Send Report</th>
+                                <th>Report</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,9 +112,9 @@ const Reservations = () => {
                                         </button>
                                     </td>
                                     <td>
-                                        <Link to={`/admindashboard/report/${reservation._id}`}>
+                                        <Link to={`/admindashboard/report/${reservation.email}`}>
                                             <button className="btn btn-sm btn-ghost">
-                                                Send
+                                                Report
                                             </button>
                                         </Link>
                                     </td>

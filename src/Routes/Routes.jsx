@@ -34,6 +34,7 @@ import Report from "../Pages/AdminDashboard/Report";
 
 
 
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -104,7 +105,8 @@ export const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <Payment></Payment>
-            }
+            },
+            
 
 
         ]
@@ -145,9 +147,11 @@ export const router = createBrowserRouter([
                 element: <AllBanner></AllBanner>
             },
             {
-                path:'report/:id',
-                element:<Report></Report>
-            }
+                path: 'report/:email',
+                element: <Report></Report>
+            },
+
+
         ]
     },
 

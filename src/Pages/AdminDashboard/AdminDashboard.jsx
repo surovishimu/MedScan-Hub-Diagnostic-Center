@@ -97,18 +97,7 @@ const AdminDashbord = () => {
                     <FaHome className="mr-2 text-xl" /> Home
                 </NavLink>
 
-                <NavLink
-                    to="/alltest"
-                    className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
-                        return isPending
-                            ? 'pending flex items-center text-white p-3 lg:p-7 text-sm uppercase font-semibold'
-                            : isActive || isExact || isPartiallyCurrent
-                                ? 'active flex items-center text-black bg-green-700 lg:p-7 p-3 text-sm uppercase font-semibold'
-                                : 'flex items-center text-white hover:text-black hover:bg-white p-3 lg:p-7 text-sm uppercase font-semibold';
-                    }}
-                >
-                    <FaListAlt className="mr-2 text-xl" /> All Test
-                </NavLink>
+                
 
             </div>
             <div className="flex-1 p-8">
