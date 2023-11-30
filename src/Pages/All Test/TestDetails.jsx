@@ -54,6 +54,7 @@ const TestDetails = () => {
                 reserveID: testDetails._id,
                 email: user.email,
                 userName: user.displayName,
+
                 testName: testDetails.title,
                 image: testDetails.image,
                 keydetail: testDetails.description,
@@ -62,7 +63,7 @@ const TestDetails = () => {
                 price: testDetails.price,
                 report: 'Pending'
             };
-
+            console.log(user);
             axiosSecure.post('/reservations', reservationInfo)
                 .then(res => {
                     if (res.data.insertedId) {

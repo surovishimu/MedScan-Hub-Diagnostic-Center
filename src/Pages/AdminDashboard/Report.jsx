@@ -4,7 +4,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { v4 as uuidv4 } from 'uuid';
 const Report = () => {
-    const { email } = useParams();
+    const { id } = useParams();
     const uniqueLink = uuidv4();
     const axiosSecure = useAxiosSecure();
     const [reservations, setReservations] = useState({});
@@ -13,7 +13,7 @@ const Report = () => {
     useEffect(() => {
         const fetchReservations = async () => {
             try {
-                const response = await axiosSecure.get(`/reservationsemail/${email}`);
+                const response = await axiosSecure.get(`/reservationsemail/${id}`);
                 setReservations(response.data);
             } catch (error) {
                 console.error("Error fetching reservations:", error);
@@ -21,12 +21,12 @@ const Report = () => {
         };
 
         fetchReservations();
-    }, [axiosSecure, email]);
+    }, [axiosSecure, id]);
     console.log(reservations);
     useEffect(() => {
         const fetchReservations = async () => {
             try {
-                const response = await axiosSecure.get(`/testemail/${email}`);
+                const response = await axiosSecure.get(`/testemail/${id}`);
                 setTest(response.data);
             } catch (error) {
                 console.error("Error fetching reservations:", error);
@@ -34,16 +34,14 @@ const Report = () => {
         };
 
         fetchReservations();
-    }, [axiosSecure, email]);
+    }, [axiosSecure, id]);
     console.log(test);
 
     const handleReport = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
-        const age = form.age.value;
-        const weight = form.weight.value;
-        const blood = form.blood.value;
+       
         const gender = form.gender.value;
         const testName = form.testName.value;
         const testDate = form.testdate.value;
@@ -58,7 +56,7 @@ const Report = () => {
 
 
         const testInfo = {
-            name, age, weight, blood, gender, testName, testDate, Glucose, Creatinine, Cholesterol, ALT, MedicalHistory, Conclusion, LaboratoryInformation, Disclaimer, email: reservations.email,
+            name, gender, testName, testDate, Glucose, Creatinine, Cholesterol, ALT, MedicalHistory, Conclusion, LaboratoryInformation, Disclaimer, email: reservations.email,
             uniqueLink,
         }
 
@@ -85,7 +83,7 @@ const Report = () => {
                             Name
                         </label>
                         <input
-                            defaultValue={reservations.name}
+                            defaultValue={test.userName}
                             required
                             type="text"
                             id="name"
@@ -93,46 +91,9 @@ const Report = () => {
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="age" className="block text-gray-700 font-bold">
-                            Age
-                        </label>
-                        <input
-                            defaultValue={reservations.age}
-                            required
-                            type="text"
-                            id="age"
-                            name="age"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="weight" className="block text-gray-700 font-bold">
-                            Weight
-                        </label>
-                        <input
-                            defaultValue={reservations.weight}
-
-                            required
-                            type="text"
-                            id="weight"
-                            name="weight"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="blood" className="block text-gray-700 font-bold">
-                            Blood Group
-                        </label>
-                        <input
-                            defaultValue={reservations.blood}
-                            required
-                            type="text"
-                            id="blood"
-                            name="blood"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
-                        />
-                    </div>
+                
+                 
+                    
                     <div className="mb-4">
                         <label htmlFor="gender" className="block text-gray-700 font-bold">
                             Gender

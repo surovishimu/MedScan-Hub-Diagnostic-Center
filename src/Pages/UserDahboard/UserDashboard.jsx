@@ -4,13 +4,22 @@ import { GrDocumentTest } from "react-icons/gr";
 import { CgProfile } from "react-icons/cg";
 import { NavLink, Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import useAdmin from "../../Hooks/useAdmin";
+import { Helmet } from "react-helmet-async";
 
 
 
 const UserDashbord = () => {
-
+const [isAdmin]=useAdmin()
+console.log(isAdmin);
     return (
-        <div className="flex flex-col md:flex-row">
+        <div>
+             <Helmet>
+                <title>
+                    MedScan Hub | User Dashboard
+                </title>
+            </Helmet>
+            <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-64 min-h-full md:min-h-screen bg-green-900 menu ">
 
                 <NavLink
@@ -102,6 +111,7 @@ const UserDashbord = () => {
                 <Outlet></Outlet>
             </div>
             <Toaster position="bottom-center"></Toaster>
+        </div>
         </div>
     );
 };

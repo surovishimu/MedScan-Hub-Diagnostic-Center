@@ -7,10 +7,17 @@ import { MdOutlineAddBox } from "react-icons/md";
 import { TbHandClick } from "react-icons/tb";
 import { PiFlagBanner } from "react-icons/pi";
 import { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const AdminDashbord = () => {
 
     return (
-        <div className="flex flex-col md:flex-row">
+      <div>
+         <Helmet>
+                <title>
+                    MedScan Hub | Admin Dashboard
+                </title>
+            </Helmet>
+          <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-64 min-h-full md:min-h-screen bg-green-900 menu ">
 
                 <NavLink
@@ -105,6 +112,7 @@ const AdminDashbord = () => {
             </div>
             <Toaster position="bottom-center"></Toaster>
         </div>
+      </div>
     );
 };
 

@@ -21,11 +21,23 @@ const TestResult = () => {
     }, [axiosSecure, user.email]);
 
     console.log(result);
+    const handlePrint = () => {
+        window.print();
+    };
+
     return (
         <div>
-            <h1 className="text-3xl text-slate-600 border-r-4 border-green-700 pr-2  mb-10 inline-block">
-                Your <span className="font-semibold text-4xl text-amber-500">Test Report</span>
-            </h1>
+            <div className="flex justify-between items-center">
+                <h1 className="text-3xl text-slate-600 border-r-4 border-green-700 pr-2  mb-10 inline-block">
+                    Your <span className="font-semibold text-4xl text-amber-500">Test Report</span>
+                </h1>
+                <button
+                    onClick={handlePrint}
+                    className="bg-green-600 text-white py-2 px-4 rounded-md hover:purple-500 outline-none text-lg mt-4"
+                >
+                    Print Report
+                </button>
+            </div>
             <div>
                 {
                     result.map(res =>
@@ -100,6 +112,7 @@ const TestResult = () => {
 
                     )
                 }
+
             </div>
         </div>
     );

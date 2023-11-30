@@ -22,6 +22,8 @@ const Reservations = () => {
         fetchReservations();
     }, [axiosSecure, id]);
 
+    console.log(reservations);
+
     const handleDelete = (reservation) => {
         swal({
             title: "Are you sure?",
@@ -112,7 +114,7 @@ const Reservations = () => {
                                         </button>
                                     </td>
                                     <td>
-                                        <Link to={`/admindashboard/report/${reservation.email}`}>
+                                        <Link to={`/admindashboard/report/${reservation._id}`}>
                                             <button className="btn btn-sm btn-ghost">
                                                 Report
                                             </button>

@@ -1,9 +1,16 @@
+import { Helmet } from 'react-helmet-async';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 const Gallery = () => {
     return (
-        <div className='mt-20 h-screen'>
+       <div>
+         <Helmet>
+                <title>
+                    MedScan Hub | Gallery
+                </title>
+            </Helmet>
+         <div className='mt-20 h-screen'>
             <Tabs>
                 <TabList>
                     <Tab>EQUIPMENT</Tab>
@@ -150,6 +157,7 @@ const Gallery = () => {
                 </TabPanel>
             </Tabs>
         </div>
+       </div>
     );
 };
 

@@ -29,6 +29,7 @@ import AlltestList from "../Pages/AdminDashboard/AlltestList";
 import UpdateTest from "../Pages/AdminDashboard/UpdateTest";
 import Reservations from "../Pages/AdminDashboard/Reservations";
 import Report from "../Pages/AdminDashboard/Report";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -106,7 +107,7 @@ export const router = createBrowserRouter([
                 path: 'payment/:id',
                 element: <Payment></Payment>
             },
-            
+
 
 
         ]
@@ -117,7 +118,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: 'allusers',
-                element: <Alluser></Alluser>
+                element: <AdminRoute><Alluser></Alluser></AdminRoute>
 
             },
             {
@@ -147,7 +148,7 @@ export const router = createBrowserRouter([
                 element: <AllBanner></AllBanner>
             },
             {
-                path: 'report/:email',
+                path: 'report/:id',
                 element: <Report></Report>
             },
 

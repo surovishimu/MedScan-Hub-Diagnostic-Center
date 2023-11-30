@@ -28,12 +28,12 @@ const SignUp = () => {
     const [allUpazilas, setAllUpazilas] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/alldistrict')
+        fetch('https://diagnostic-center-server-side.vercel.app/alldistrict')
             .then(res => res.json())
             .then(data => setDistricts(data))
             .catch(error => console.error('Error fetching districts:', error));
 
-        fetch('http://localhost:5000/allupazila')
+        fetch('https://diagnostic-center-server-side.vercel.app/allupazila')
             .then(res => res.json())
             .then(data => {
                 setUpazilas(data);

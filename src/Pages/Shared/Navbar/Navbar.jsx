@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../../../public/image/logo.png'
 
 import useAuth from '../../../Hooks/useAuth';
+import useAdmin from '../../../Hooks/useAdmin';
 
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
     const toggleDrawer = () => {
         setDrawerOpen(!isDrawerOpen);
     };
-
+    const [isAdmin] = useAdmin();
     const navOptions = <div className='flex flex-col lg:flex-row justify-normal items-center '>
         <NavLink
             to="/"
@@ -65,20 +66,22 @@ const Navbar = () => {
 
 
 
-        < NavLink
-            to="admindashboard/allusers"
-            className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
-                return isPending
-                    ? 'pending text-white p-3 lg:p-7 text-sm uppercase font-semibold'
-                    : isActive || isExact || isPartiallyCurrent
-                        ? 'active text-black bg-green-700 lg:p-7 p-3 text-sm uppercase font-semibold'
-                        : 'text-white hover:text-black hover:bg-white p-3 lg:p-7 text-sm uppercase font-semibold';
-            }}
-        >
-            Admin Dashboard
-        </NavLink>
         {
-            user && <NavLink
+            isAdmin && < NavLink
+                to="admindashboard/allusers"
+                className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
+                    return isPending
+                        ? 'pending text-white p-3 lg:p-7 text-sm uppercase font-semibold'
+                        : isActive || isExact || isPartiallyCurrent
+                            ? 'active text-black bg-green-700 lg:p-7 p-3 text-sm uppercase font-semibold'
+                            : 'text-white hover:text-black hover:bg-white p-3 lg:p-7 text-sm uppercase font-semibold';
+                }}
+            >
+                Admin Dashboard
+            </NavLink>
+        }
+        {
+            user &&!isAdmin&& <NavLink
                 to="userdashboard/userprofile"
                 className={({ isActive, isExact, isPartiallyCurrent, isPending }) => {
                     return isPending
@@ -158,7 +161,7 @@ const Navbar = () => {
 
                 {/* Drawer for small devices */}
                 {isDrawerOpen && (
-                    <div className="lg:hidden absolute top-0 left-0 w-9/12 h-full bg-green-800 bg-opacity-95 z-10">
+                    <div className="lg:hidden absolute top-0 left-0 w-9/12 h-full bg-green-800 bg-opacity-95 z-30">
                         <div className="flex justify-end p-4">
                             <button onClick={toggleDrawer} className="text-white">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
