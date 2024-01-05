@@ -31,12 +31,12 @@ const UserProfile = () => {
     }, [axiosSecure, user]);
 
     useEffect(() => {
-        fetch('https://diagnostic-center-server-side.vercel.app/alldistrict')
+        fetch('https://b8a12-server-side-surovishimu.vercel.app/alldistrict')
             .then(res => res.json())
             .then(data => setDistricts(data))
             .catch(error => console.error('Error fetching districts:', error));
 
-        fetch('https://diagnostic-center-server-side.vercel.app/allupazila')
+        fetch('https://b8a12-server-side-surovishimu.vercel.app/allupazila')
             .then(res => res.json())
             .then(data => {
                 setUpazilas(data);

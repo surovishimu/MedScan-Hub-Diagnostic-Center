@@ -26,7 +26,7 @@ const CheckoutForm = ({ totalPrice }) => {
     }, [axiosSecure, totalPrice]);
 
     const applyPromoCode = () => {
-        if (promoCode === 'MEDSCAN2023') {
+        if (promoCode === 'WELLNESSVIP') {
             const discountAmount = totalPrice * 0.05; // 5% discount
             setDiscount(discountAmount);
             setError('');
